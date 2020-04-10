@@ -1,0 +1,1197 @@
+/*
+Template Name: Bonanxaa - Minimal Portfolio Html 5 Responsive Template
+Template URI: http://coderboys.net/
+Author: CoderHut
+Author URI: http://coderboys.net/
+Version: 1.0
+Tags: 
+*/
+
+
+/*  ---------------------------------------------------------------------------
+    TAble Of Contents
+    ---------------------------------------------------------------------------
+
+*   01. GLobal Area
+*   02. Site Header
+*   03. Slider Area
+*   04. Gallery Area
+*   05. Brand Area
+*   06. Footer Area
+*   07. Breadcamb Area
+*   08. About Us Area
+*   09.Our Team Area
+*   10.Pricing Area
+*   11.Single Post Area
+*   12.Blog Area
+*   13.Error Area
+*   14.Single Portfolio Area
+*   15. Related  Area
+*   16. Contact Area
+*/
+
+/**
+*
+* ---------------------------------------------------------------------------
+# [Typography]
+
+# Body copy:            'Poppins', sans-serif
+# Heading:              'Poppins', sans-serif
+# Input, textarea:      'Poppins', sans-serif
+# Links:                'Poppins', sans-serif
+
+* --------------------------------------------------------------------------- 
+*
+*/
+
+
+/*
+* ---------------------------------------------------------------------------
+* 01. GLobal Area
+* ---------------------------------------------------------------------------
+*/
+body {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    line-height: 1.2;
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+iframe {
+    max-width: 100%;
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.media-right img,
+.media-left img {
+    max-width: inherit;
+}
+
+.owl-carousel .owl-item img {
+    width: auto;
+}
+
+::-webkit-input-placeholder {}
+
+button {
+    border: 0;
+    background-color: transparent;
+}
+
+button:focus,
+input:focus {
+    outline: none;
+}
+
+/* Section Style */
+.sec-overlay {
+    position: relative;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    z-index: 1;
+}
+
+.sec-overlay:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #ffffff;
+    opacity: .75;
+    z-index: -1
+}
+
+.single-slide-item.sec-overlay:after {
+    opacity: .8;
+}
+
+.theme-default-btn {
+    display: inline-block;
+    padding: 20px 30px;
+    background: #FD6E4E;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 14px;
+    transition: .5s;
+    line-height: 22px;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+}
+
+.theme-default-btn::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #333333;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.theme-default-btn:hover::before,
+.theme-default-btn:focus::before,
+.theme-default-btn:active::before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.theme-default-btn:hover {
+    color: #FD6E4E;
+}
+
+/* Basic margin padding */
+.m-0 {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.p-0 {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+/*preloader*/
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    background: #fff;
+}
+
+.spinner {
+    background: #FD6E4E;
+}
+
+.spinner {
+    position: relative;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -25px auto 0;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@keyframes sk-rotateplane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+
+
+/*Animated Css*/
+.animated-04s {
+    animation-delay: 0.4s;
+}
+
+.animated-08s {
+    animation-delay: 0.8s;
+}
+
+.animated-12s {
+    animation-delay: 1.2s;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 02. Site Header
+* ---------------------------------------------------------------------------
+*/
+.main-menu ul,
+.pricing-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu ul li {
+    display: inline-block;
+    padding: 35px 0;
+    margin-right: 55px;
+    position: relative;
+}
+
+.main-menu ul li:last-child {
+    margin: 0;
+}
+
+.main-menu ul li a {
+    display: block;
+    position: relative;
+    border-bottom: 2px solid transparent;
+    color: #777777;
+    padding-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.main-menu ul li:hover a,
+.main-menu ul li a.active {
+    border-bottom: 2px solid #FD6E4E;
+    color: #333333;
+}
+
+.main-menu ul li a:after {
+    position: absolute;
+    content: "/";
+    top: 0;
+    right: -28px;
+}
+
+.main-menu ul li:last-child a:after {
+    display: none;
+}
+
+.main-menu ul li ul li a:after {
+    display: none;
+}
+
+.main-menu ul li ul.submenu {
+    position: absolute;
+    width: 230px;
+    left: 0;
+    text-align: left;
+    background: #FD6E4E;
+    z-index: 9;
+    transition: .5s;
+    top: 120%;
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+.main-menu ul li:hover ul.submenu {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+}
+
+.main-menu ul li ul.submenu li {
+    display: block;
+    border-bottom: 1px solid #fff;
+    padding: 0;
+    margin-right: 0;
+}
+
+.main-menu ul li ul.submenu li:last-child {
+    border-bottom: none;
+}
+
+.main-menu ul li ul.submenu li a {
+    display: block;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: left;
+    transition: .5s;
+}
+
+.mobile-menu {
+    position: relative;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #363636;
+    text-align: center;
+    border-radius: 50%;
+    color: #363636;
+    transition: .5s;
+    line-height: 25px;
+    margin-left: 10px;
+}
+
+.social-links a:hover {
+    background-color: #FD6E4E;
+    border: 1px solid #FD6E4E;
+    color: #fff;
+}
+
+.fixed-hdr {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f9f9f9;
+    z-index: 9999;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 03. Slider Area
+* ---------------------------------------------------------------------------
+*/
+
+.single-slide-item {
+    background-size: cover;
+    background-position: center;
+    height: 768px;
+}
+
+.slider-content h1 {
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 70px;
+    margin-bottom: 30px;
+}
+
+.slider-content p {
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 30px;
+}
+
+.slider-active .owl-nav button.owl-prev,
+.slider-active .owl-nav button.owl-next {
+    font-size: 40px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 58px;
+    text-align: center;
+    background: #333333;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.slider-active .owl-nav {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+
+.slider-active .owl-nav button.owl-next {
+    background: #FD6E4E;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 04. Gallery Area
+* ---------------------------------------------------------------------------
+*/
+.gallery-list button {
+    position: relative;
+    margin-left: 25px;
+    color: #777777;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.gallery-list button:hover,
+.gallery-list button.active {
+    color: #FD6E4E;
+}
+
+.gallery-list button:first-child {
+    margin-left: 0;
+}
+
+.gallery-list button:after {
+    position: absolute;
+    content: "/";
+    right: -13px;
+    color: #777777 !important;
+}
+
+.gallery-list button:last-child::after {
+    display: none;
+}
+
+.single-gallery-wrapper {
+    position: relative;
+}
+
+.gallery-thumb {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.gallery-thumb:after {
+    position: absolute;
+    content: "";
+    left: 100%;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #FD6E4E;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.single-gallery-wrapper:hover .gallery-thumb:after {
+    opacity: .75;
+    visibility: visible;
+    left: 0;
+}
+
+.hover-content {
+    position: absolute;
+    top: 50%;
+    z-index: 9;
+    right: 0;
+    left: 0;
+    text-align: center;
+    transform: translateY(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.single-gallery-wrapper:hover .hover-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hover-content p a {
+    font-size: 20px;
+    margin: 0;
+    display: block;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.gallery-area .theme-default-btn {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 05. Brand Area
+* ---------------------------------------------------------------------------
+*/
+.single-brand-wrapper {
+    position: relative;
+    z-index: 1;
+    transition: .5s;
+    text-align: center;
+}
+
+.single-brand-wrapper:after {
+    position: absolute;
+    content: "";
+    left: 100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0;
+    transition: .5s;
+}
+
+.single-brand-wrapper:hover:after {
+    opacity: .75;
+    left: 0;
+}
+
+.hover-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 50%;
+    transform: translateY(-50%);
+    margin-left: -25px;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.single-brand-wrapper:hover .hover-icon {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.brand-area {
+    position: relative;
+}
+
+.hastag-insta span a {
+    color: #FD6E4E;
+    display: inline-block;
+    padding: 15px 60px;
+    background: #fff;
+    font-size: 16px;
+}
+
+.hastag-insta {
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: .75;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 06. Footer Area
+* ---------------------------------------------------------------------------
+*/
+.footer-content .social-links {
+    margin: 30px 0;
+}
+
+.footer-content p,
+.footer-content p a {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #333;
+}
+
+.copy-right-area p {
+    margin-bottom: 0;
+    color: #fff;
+}
+
+.copy-right-area p a:hover {
+    color: #FD6E4E;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 07. Breadcamb Area
+* ---------------------------------------------------------------------------
+*/
+
+.breadcamb-area {
+    padding: 111px 0;
+}
+
+.breadcamb-content h2 {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.breadcamb-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcamb-menu ul li {
+    display: inline-block;
+    margin-right: 17px;
+}
+
+.breadcamb-menu ul li a {
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    color: #333333;
+    font-size: 14px;
+    transition: .5s;
+}
+
+.breadcamb-menu ul li a:hover {
+    color: #FD6E4E;
+}
+
+.breadcamb-menu ul li:last-child {
+    margin-right: 0;
+}
+
+.breadcamb-menu ul li a:after {
+    position: absolute;
+    content: "/";
+    right: -13px;
+}
+
+.breadcamb-menu ul li:last-child a:after {
+    display: none;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 08. About Us Area
+* ---------------------------------------------------------------------------
+*/
+.about-us-content h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+.about-us-content p {
+    color: #777777;
+}
+
+.about-us-img {
+    background-size: cover;
+    background-position: center;
+    height: 385px;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 09.Our Team Area
+* ---------------------------------------------------------------------------
+*/
+.section-title h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 22px;
+}
+
+.sinlge-team-wrapper {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.single-team-bg img {
+    width: 100%;
+}
+
+.team-hover-content h4 {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+    line-height: 20px;
+}
+
+.team-hover-content p {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.team-hover-content {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: #FD6E4E;
+    text-align: center;
+    padding: 50px 0;
+    transform: translateY(-50%);
+    transition: .5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.sinlge-team-wrapper:hover .team-hover-content {
+    visibility: visible;
+    opacity: .75;
+    top: 50%;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 09.Service Area
+* ---------------------------------------------------------------------------
+*/
+.single-service-item h4 {
+    margin-bottom: 30px;
+    font-size: 20px;
+    transition: .5s;
+}
+
+.single-service-item p {
+    line-height: 24px;
+}
+
+.single-service-item:hover h4 {
+    color: #FD6E4E;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 10.Pricing Area
+* ---------------------------------------------------------------------------
+*/
+.single-pricing-box {
+    border: 1px solid #E7E7E7;
+    padding: 30px;
+    transition: .5s;
+}
+
+.single-pricing-box:hover {
+    box-shadow: 0 0 20px #E1E1E1;
+    border: 1px solid transparent;
+}
+
+.single-pricing-box h3 {
+    font-size: 20px;
+    font-weight: 400;
+    transition: .5s;
+}
+
+.pricing-list ul li {
+    display: block;
+    line-height: 40px;
+    color: #777777;
+    transition: .5s
+}
+
+.pricing-list ul li:hover {
+    padding-left: 5px;
+}
+
+.pricing-btn {
+    display: inline-block;
+    text-decoration: underline;
+    color: #333333;
+    font-weight: 400;
+    transition: .5s;
+}
+
+.single-pricing-box:hover h3 {
+    color: #FD6E4E;
+}
+
+.single-pricing-box:hover .pricing-btn {
+    color: #FD6E4E;
+    text-decoration: underline;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 11.Single Post Area
+* ---------------------------------------------------------------------------
+*/
+.single-post-bg img {
+    width: 100%;
+}
+
+.single-post-content {
+    color: #777777;
+    line-height: 24px;
+}
+
+.single-post-content h4 {
+    font-size: 20px;
+    color: #777777;
+    margin: 20px 0 25px;
+    font-weight: 600;
+}
+
+.single-post-content h4 a {
+    color: #777777;
+}
+
+.meta-post a {
+    color: #777777;
+    font-weight: 600;
+}
+
+.meta-post span {
+    margin-left: 25px;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 12.Blog Area
+* ---------------------------------------------------------------------------
+*/
+.blog-thumb {
+    position: relative;
+    transition: .5s;
+}
+
+.blog-thumb img {
+    width: 100%;
+}
+
+.blog-hover-content {
+    display: inline-block;
+    background: #FD6E4E;
+    border: 2px solid #fff;
+    padding: 10px 5px;
+    color: #fff;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 12px;
+    transition: .5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.blog-hover-content:last-child span {
+    display: block;
+    text-align: center;
+}
+
+.blog-hover-content:last-child span a {
+    color: #fff;
+}
+
+.blog-content h4 {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.blog-content {
+    margin-top: 20px;
+    color: #777777;
+    line-height: 24px;
+    font-size: 14px;
+    padding-right: 1px;
+}
+
+.blog-content p {
+    margin: 0;
+}
+
+.single-blog-item:hover .blog-thumb {
+    box-shadow: 0 0 20px #DFDFDF;
+}
+
+.single-blog-item:hover .blog-hover-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.blog-more-link {
+    color: #777777;
+    display: inline-block;
+    text-transform: capitalize;
+    transition: .5s;
+}
+
+.blog-more-link:hover {
+    color: #FD6E4E;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 13.Error Area
+* ---------------------------------------------------------------------------
+*/
+.error-content h1 {
+    font-size: 100px;
+}
+
+.error-content h1 span {
+    color: #FD6E4E;
+}
+
+.error-content h3 {
+    font-size: 30px;
+    margin: 30px 0;
+    text-transform: capitalize;
+}
+
+.error-content a {
+    display: inline-block;
+    color: #333333;
+    text-transform: capitalize;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 14.Single Portfolio Area
+* ---------------------------------------------------------------------------
+*/
+.single-portfolio-slider {
+    background-size: cover;
+    background-position: center;
+    min-height: 270px;
+    border: 3px solid #f1f1f1;
+}
+
+.portfolio-content {
+    line-height: 24px;
+    color: #777777;
+}
+
+.portfolio-content h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.portfolio-slider-active .owl-dots {
+    margin: 0 -9px;
+    margin-top: 30px;
+}
+
+.portfolio-slider-active .owl-dots button {
+    display: inline-block;
+    width: calc(25% - 18px);
+    height: 90px;
+    background: #CACACA;
+    margin: 0 9px;
+    border: 3px solid #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-slider-active .owl-dots button.active,
+.portfolio-slider-active .owl-dots button:hover {
+    border: 3px solid #F1F1F1;
+}
+
+.itembg {
+    display: none;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 15. Related  Area
+* ---------------------------------------------------------------------------
+*/
+.single-related-item {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: .5s;
+}
+
+.single-related-item img {
+    width: 100%;
+}
+
+.related-hover .theme-default-btn {
+    padding: 15px 30px;
+}
+
+.related-hover {
+    position: absolute;
+    right: 0;
+    left: 0;
+    text-align: center;
+    bottom: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.single-related-item:hover .related-hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*
+* ---------------------------------------------------------------------------
+* 16.Contact Area
+* ---------------------------------------------------------------------------
+*/
+.contact-content h4,
+.contact-info h4 {
+    font-size: 20px;
+    margin-bottom: 36px;
+}
+
+.contact-content p,
+.contact-info p {
+    margin-bottom: 0;
+    color: #777777;
+}
+
+.contact-form .form-control {
+    border: 1px solid #333;
+    border-radius: 0;
+    color: #333;
+    transition: .5s;
+    font-size: 14px;
+}
+
+.contact-form input.form-control {
+    height: 38px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 30px;
+}
+
+.contact-form textarea.form-control {
+    resize: none;
+    height: 105px;
+}
+
+.contact-form .form-control:focus {
+    box-shadow: none;
+    border-color: #FD6E4E;
+}
+
+.contact-form button {
+    background: #FD6E4E;
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 15px 60px;
+    transition: .5s;
+    border: none;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+}
+
+.contact-form button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #333333;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.contact-form button:hover::before,
+.contact-form button:focus::before,
+.contact-form button:active::before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.contact-form button:hover {
+    color: #FD6E4E;
+}
+
+.contact-address {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.contact-address li,
+.contact-address li a {
+    color: #777777;
+}
+
+.contact-address li {
+    margin-bottom: 15px;
+    line-height: 24px;
+    position: relative;
+    padding-left: 60px;
+}
+
+.contact-address li:before {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    border: 1px solid #333;
+    height: 30px;
+    width: 30px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.contact-address li:hover:before {
+    border-color: #FD6E4E;
+    color: #FD6E4E;
+}
+
+.contact-address li:nth-child(1):before {
+    content: "H";
+}
+
+.contact-address li:nth-child(2):before {
+    content: "P";
+}
+
+.contact-address li:nth-child(3):before {
+    content: "F";
+}
+
+.contact-address li:nth-child(4):before {
+    content: "E";
+}
+
+.contact-address li:last-child {
+    margin-bottom: 0;
+}
+
+.form-message.alert {
+	margin: 20px 0 0;
+}
